@@ -3,7 +3,7 @@ Create a binned version of the SFS
 
 Introduction:
 SFS_CreateBinned.py will coarsen a multidimensional SFS to include a user-defined number
-of classes per population. This script is written in python 2.7.
+of classes per population. This script is written in python 2.7 and works for four populations.
 
 Input: 
 As input, SFS_CreateBinned.py requires two things: 
