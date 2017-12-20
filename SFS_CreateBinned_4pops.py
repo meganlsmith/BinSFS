@@ -61,7 +61,8 @@ def pop_association(Traits):
 def Empty_AFS(Pops,Pop_counts):
     print "Creating an empty dictionary for storing the AFS..."
     AFS_Empty = OrderedDict()
-    npops = len(Pop_counts) # get count of number of populations
+    npops = len(Pop_counts)
+#    print npops # get count of number of populations
     i = 1 # initialize a counter
     for key in Pop_counts:
 #         print i
@@ -179,7 +180,6 @@ def Pooled_AFS(Pops, Pop_counts, nclasses):
                 for s in range(1,nclasses+1):
                     for t in range(1,nclasses+1):
                         bin = '%r_%r_%r_%r' % (q,r,s,t)
-#                        print bin
                         AFS_Pooled.update({bin:0})
     return AFS_Pooled
 
@@ -308,7 +308,7 @@ def GetPopCounts(AFS,ThreshCounter,Pooled_AFS):
             pop_4 = 10
 
         keytopop = '%s_%s_%s_%s' % (pop_1,pop_2,pop_3,pop_4)
-        Pooled_AFS[keytopop] += int(AFS[key])
+        Pooled_AFS[keytopop] += float(AFS[key])
     return Pooled_AFS
 
 def print_AFS(Full_AFS):
@@ -336,7 +336,7 @@ def Populate_AFS(file):
 Pops, Pop_counts = pop_association(Traits)
 ThreshCounter = Set_Thresholds(Pops,Pop_counts)
 Populate_AFS(file)
-
+#
 
 
 
